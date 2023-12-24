@@ -2,13 +2,13 @@
 
     include '../core/database.php';
 
-    class Classe extends Database{
+    class Classe{
         private $level;
         private $promotion;
         private $name;
         
         public function addClasse($level,$promotion,$name){
-           $sql ="INSERT INTO `classe`(`level`, `classename`, `promotion`, `formateur`) VALUES ('$level','$promotion','$name','')";
+           $sql ="INSERT INTO `classe`(`level`, `classename`, `promotion`) VALUES ('$level','$promotion','$name')";
            $result = Database::connexion()->getPdo()->query($sql);
 
             if ($result) {
