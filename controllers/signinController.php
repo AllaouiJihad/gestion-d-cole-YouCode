@@ -5,17 +5,13 @@ if (isset($_POST['create'])) {
     
     $email=$_POST['email'];
     $pwd=$_POST['pwd'];
-        $objsignin = new Apprenant();
+        $objsignin = new User();
         try{
         $row = $objsignin->signin($email,$pwd);
-        $_SESSION['message']="welcome!";
-        if ($_SESSION['id_role'] == 2) {
-            header('Location: ../views/formateurPage.php');
-        }
-        elseif ($_SESSION['id_role'] == 1) {
-            header('Location: ../views/adminPage.php');
-        }
-        header('location: ../views/apprenantPage.php');
+
+
+        $_SESSION['permissions']=new Permission()->getPermissions($_SESSION['id_role']);
+        header('location: ../views/main.php');
         }catch(Exception $e){
             $_SESSION['error']=$e->getMessage();
             header('location: ../views/signup.php');
@@ -26,4 +22,3 @@ if (isset($_POST['create'])) {
     
 
 
-?>

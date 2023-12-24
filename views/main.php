@@ -53,10 +53,16 @@
                                  Classe
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
+                                    <?php
+                                    if(in_array('Manage_classe',$_SESSION['permissions'])){
+                                    ?>
                                     <a class="nav-link" href="layout-sidenav-light.html">ajouter classe.</a>
-                                    <a class="nav-link" href="layout-static.html">ajouter un apprenant.</a>
+                                    <?php
+                                    }
+                                    ?>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
