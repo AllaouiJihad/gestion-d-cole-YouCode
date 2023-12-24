@@ -2,6 +2,7 @@
 
     include '../core/database.php';
     class User{
+        private $id;
         private $lastname;
         private $firstname;
         private $email;
@@ -10,6 +11,86 @@
         private $cin;
         private $birthdate;
         private $pwd;
+
+
+
+         // Getter and Setter for $lastname
+    public function getLastName() {
+        return $this->lastname;
+    }
+
+    public function setLastName($lastname) {
+        $this->lastname = $lastname;
+    }
+
+    // Getter and Setter for $firstname
+    public function getFirstName() {
+        return $this->firstname;
+    }
+
+    public function setFirstName($firstname) {
+        $this->firstname = $firstname;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+    public function getId() {
+            return $this->id;
+        }
+
+        public function setId($id) {
+            $this->id = $id;
+        }
+    // Getter and Setter for $phone
+    public function getPhone() {
+        return $this->phone;
+    }
+    
+
+    public function setPhone($phone) {
+        $this->phone = $phone;
+    }
+
+    public function getAddress() {
+        return $this->address;
+    }
+
+    public function setAddress($address) {
+        $this->address = $address;
+    }
+
+    // Getter and Setter for $cin
+    public function getCin() {
+        return $this->cin;
+    }
+
+    public function setCin($cin) {
+        $this->cin = $cin;
+    }
+
+    // Getter and Setter for $birthdate
+    public function getBirthdate() {
+        return $this->birthdate;
+    }
+
+    public function setBirthdate($birthdate) {
+        $this->birthdate = $birthdate;
+    }
+
+    // Getter and Setter for $pwd
+    public function getPassword() {
+        return $this->pwd;
+    }
+
+    public function setPassword($password) {
+        $this->pwd = $password;
+    }
+
 
         public function getAllApprenants(){
             $sql = "select * from utilisateur where id_role = 3";
