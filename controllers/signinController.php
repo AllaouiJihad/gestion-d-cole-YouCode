@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../models/Apprenant.php';
+include '../models/User.php';
 if (isset($_POST['create'])) {
     
     $email=$_POST['email'];
